@@ -1,0 +1,30 @@
+[package]
+name = "typesafe-sdk-rust"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.82"
+license = "MIT"
+description = "Community Rust SDK for the TypeSafe AI API. A port of the official JavaScript SDK."
+repository = "https://github.com/tornikegomareli/typesafe-sdk-rust"
+readme = "README.md"
+keywords = ["typesafe", "jev", "ai", "sdk", "api"]
+categories = ["api-bindings"]
+
+[lib]
+name = "typesafe"
+
+[dependencies]
+fastrand = "2"
+httpdate = "1"
+indexmap = { version = "2", features = ["serde"] }
+reqwest = { version = "0.12", default-features = false, features = ["rustls-tls", "http2"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = { version = "1", features = ["preserve_order"] }
+thiserror = "2"
+tokio = { version = "1", features = ["macros", "time"] }
+tokio-util = "0.7"
+
+[dev-dependencies]
+serde_json = "1"
+tokio = { version = "1", features = ["macros", "rt-multi-thread", "time"] }
+wiremock = "0.6"
